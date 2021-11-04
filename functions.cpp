@@ -103,11 +103,13 @@ std::string DecimalToBase(const double & decimal,const unsigned short & outputBa
         }while(integer > 0);
 
         /* Convert places to decimal values of the digits using repeated multiplication by base */
+        int safetyCounter{0};
         do{
-            places *=2;
+            places *= outputBase;
             placesDecVals.push(floor(places)); //storing overflow
             places -= floor(places);
-        }while(places > 0);
+            ++safetyCounter;
+        }while(places > 0 && safetyCounter < 64); //do this loop a maximum of 64 times
 
         /* Converting decimal values to corresponding digits */
         std::stringstream sstream;
