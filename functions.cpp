@@ -10,7 +10,7 @@
 #include "functions.h"
 
 /*Converts a number from inputBase to outputBase */
-std::string Convert(std::string input, unsigned short inputBase, unsigned short outputBase){
+std::string Convert(const std::string & input, const unsigned short & inputBase, const unsigned short & outputBase){
     double decimal = ToDecimal(input, inputBase); //Converting to Decimal
     if(decimal <0){
         return "ERROR";
@@ -20,7 +20,7 @@ std::string Convert(std::string input, unsigned short inputBase, unsigned short 
 }
 
 /*Calculates the decimal Value of a digit of any base*/
-unsigned short Digit2DecVal(char digit){
+unsigned short Digit2DecVal(const char & digit){
     /* Calculating decimal Value of digit based on ASCII Code*/
     if(isdigit(digit)){
         return digit -48; //0-9
@@ -80,7 +80,7 @@ double ToDecimal(const std::string & input, const unsigned short & base){
 }
 
 /* Gets the digit of a decimal value */
-char Decimal2Digit(unsigned short value){
+char Decimal2Digit(const unsigned short & value){
     std::string digits {"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"};
     return digits.at(value);
 }

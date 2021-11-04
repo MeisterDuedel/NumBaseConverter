@@ -16,16 +16,16 @@
 #include <sstream>
 
 /*Converts a number from inputBase to outputBase */
-std::string Convert(std::string input, unsigned short inputBase, unsigned short outputBase);
+std::string Convert(const std::string & input, const unsigned short & inputBase, const unsigned short & outputBase);
 
 /*Calculates the decimal Value of a digit of any base*/
-unsigned short Digit2DecVal(char digit);
+unsigned short Digit2DecVal(const char & digit);
 
 /*Converts a number from inputBase to Base10/decimal*/
 double ToDecimal(const std::string & input, const unsigned short & base);
 
 /* Gets the digit of a decimal value */
-char Decimal2Digit(unsigned short value);
+char Decimal2Digit(const unsigned short & value);
 
 /*Converts the decimal representation to outputBase*/
 std::string DecimalToBase(const double & decimal,const unsigned short & outputBase);
